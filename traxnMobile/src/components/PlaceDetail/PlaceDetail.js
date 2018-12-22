@@ -32,7 +32,7 @@ const placeDetail = props => {
 const styles = StyleSheet.create({
   modalContainer: {
     margin: 22,
-    marginTop: 70
+    marginTop: 80
   },
   placeImage: {
     width: "100%",
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
   placeName: {
     fontWeight: "bold",
     textAlign: "center",
-    fontSize: 28
+    fontSize: 28,
+    marginTop: 10
   }
 });
 

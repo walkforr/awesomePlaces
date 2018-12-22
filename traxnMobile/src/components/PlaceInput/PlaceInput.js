@@ -6,6 +6,10 @@ class PlaceInput extends Component {
     placeName: ""
   };
 
+  componentDidMount() {
+    
+  }
+
   placeNameChangedHandler = val => {
     this.setState({
       placeName: val
@@ -42,14 +46,13 @@ class PlaceInput extends Component {
 const styles = StyleSheet.create({
   inputContainer: {
     // flex: 1,
-    marginTop: 30,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
   },
   placeInput: {
-    width: "70%",
+    width: "70%"
   },
   placeButton: {
     width: "30%"
