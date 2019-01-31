@@ -56,5 +56,4 @@ buck-out/
 *.jsbundle
 
 #firebase keys
-functions/
-rnmaps.json
+rnmaps.*
