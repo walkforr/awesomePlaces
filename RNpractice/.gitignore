@@ -55,5 +55,7 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 
-#firebase keys
-rnmaps.*
+env.js
+
+
+

@@ -1,16 +1,22 @@
 import React, { Component } from "react";
-import { View, Image, Button, StyleSheet, } from "react-native";
-import ImagePicker from 'react-native-image-picker';
+import { View, Image, Button, StyleSheet } from "react-native";
+import ImagePicker from "react-native-image-picker";
 
 class PickImage extends Component {
   state = {
     pickedImage: null
   }
 
+  reset = () => {
+    this.setState({
+      pickedImage: null
+    })
+  };
+
   pickImageHandler = () => {
-    ImagePicker.showImagePicker({title: "Pick an Image"}, res => {
+    ImagePicker.showImagePicker({title: "Pick an Image", maxWidth: 800, maxHeight: 600}, res => {
       if (res.didCancel) {
-        console.log("User canceled!");
+        console.log("User cancelled!");
       } else if (res.error) {
         console.log("Error", res.error);
       } else {
@@ -28,7 +34,6 @@ class PickImage extends Component {
         <View style={styles.placeholder}>
           <Image source={this.state.pickedImage} style={styles.previewImage} />
         </View>
-
         <View style={styles.button}>
           <Button title="Pick Image" onPress={this.pickImageHandler} />
         </View>
@@ -43,19 +48,19 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     placeholder: {
-        borderWidth: 1,
-        borderColor: "black",
-        backgroundColor: "#eee",
-        width: "80%",
-        height: 150
+      borderWidth: 1,
+      borderColor: "black",
+      backgroundColor: "#eee",
+      width: "80%",
+      height: 150
     },
     button: {
-        margin: 8
+      margin: 8
     },
     previewImage: {
         width: "100%",
         height: "100%"
     }
-})
+  });
 
 export default PickImage;

@@ -12,4 +12,6 @@ const RNRedux = () => (
     </Provider>
 );
 
+App();
+
 AppRegistry.registerComponent('RNpractice', () => RNRedux);
