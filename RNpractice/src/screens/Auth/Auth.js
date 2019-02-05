@@ -140,7 +140,7 @@ class AuthScreen extends Component {
     let confirmPasswordControl = null;
     let submitButton = (
       <ButtonWithBackground
-            color="#29aaf4"
+            color="transparent"
             onPress={this.authHandler}
             disabled={
               !this.state.controls.confirmPassword.valid && this.state.authMode === "signup" ||
@@ -154,8 +154,8 @@ class AuthScreen extends Component {
 
     if (this.state.viewMode === "portrait") {
       headingText = (
-        <MainText>
-          <HeadingText>Please Log In</HeadingText>
+        <MainText >
+          <HeadingText style={styles.headingText}>Please Log In</HeadingText>
         </MainText>
       );
     }
@@ -187,12 +187,7 @@ class AuthScreen extends Component {
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
           {headingText}
-          <ButtonWithBackground
-            color="#29aaf4"
-            onPress={this.switchAuthModeHandler}
-          >
-            Switch to {this.state.authMode === "login" ? "Sign Up" : "Login"}
-          </ButtonWithBackground>
+          
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.inputContainer}>
               <DefaultInput
@@ -237,6 +232,12 @@ class AuthScreen extends Component {
             </View>
           </TouchableWithoutFeedback>
           {submitButton}
+          <ButtonWithBackground
+            color="transparent"
+            onPress={this.switchAuthModeHandler}
+          >
+            Switch to {this.state.authMode === "login" ? "Sign Up" : "Login"}
+          </ButtonWithBackground>
         </KeyboardAvoidingView>
       </ImageBackground>
     );
@@ -254,7 +255,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   inputContainer: {
-    width: "80%"
+    width: "80%",
+    padding: 6
   },
   input: {
     backgroundColor: "#eee",
@@ -273,6 +275,9 @@ const styles = StyleSheet.create({
   },
   portraitPasswordWrapper: {
     width: "100%"
+  },
+  headingText: {
+    paddingBottom: 50
   }
 });
 

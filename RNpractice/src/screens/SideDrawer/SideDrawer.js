@@ -11,7 +11,7 @@ class SideDrawer extends Component {
             <View style={[styles.container, { width: Dimensions.get("window").width * 0.8 }]}>
             <TouchableOpacity onPress={this.props.onLogout}>
                 <View style={styles.drawerItem}>
-                    <Icon name={Platform.OS === 'android' ? "md-log-out" : "ios-log-out"} size={30} color="#aaa" style={styles.drawerItemIcon} />
+                    <Icon name={Platform.OS === 'android' ? "md-log-out" : "ios-log-out"} size={30} color="black" style={styles.drawerItemIcon} />
                 <Text>Sign Out</Text>
                 </View>
             </TouchableOpacity>

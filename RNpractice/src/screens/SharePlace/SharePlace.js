@@ -22,7 +22,7 @@ import { startAddPlace } from '../../store/actions/index';
  
 class SharePlaceScreen extends Component {
   static navigatorStyle = {
-    navBarButtonColor: "orange"
+    navBarButtonColor: "black"
   };
 
   constructor(props) {
@@ -155,13 +155,11 @@ class SharePlaceScreen extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <MainText>
-            <HeadingText>Share a Place with us!</HeadingText>
-          </MainText>
-          <PickImage
-            onImagePicked={this.imagePickedHandler}
-            ref={ref => (this.imagePicker = ref)}
-          />
+          
+          
+          
+          
+          
           <PickLocation
             onLocationPick={this.locationPickedHandler}
             ref={ref => (this.locationPicker = ref)}
@@ -170,6 +168,11 @@ class SharePlaceScreen extends Component {
             placeData={this.state.controls.placeName}
             onChangeText={this.placeNameChangedHandler}
           />
+          <PickImage
+            onImagePicked={this.imagePickedHandler}
+            ref={ref => (this.imagePicker = ref)}
+          />
+          
           <View style={styles.button}>{submitButton}</View>
         </View>
       </ScrollView>
@@ -190,7 +193,7 @@ const styles = StyleSheet.create({
     height: 150
   },
   button: {
-    margin: 8
+    margin: 0
   },
   previewImage: {
     width: "100%",
